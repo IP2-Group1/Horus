@@ -21,7 +21,7 @@ setInterval(() => {
     const minutes = timeObject.getMinutes();
     const ampm = hour >=12 ? 'PM' : 'AM'
 
-    time.innerHTML = hoursIn12HrFormat + ':'+ minutes+ ' ' + `<span id="am-pm">${ampm}</span>`
+    time.innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':'+ (minutes < 10 ? '0'+minutes : minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
 
     date.innerHTML = days[day] + ', ' + date1+ ' ' + months[month]
 },1000)
@@ -44,7 +44,10 @@ function getWeatherData() {
 }
 
 function displayWeatherData (data) {
-    let {humidity, pressure, sunrise, sunset, windSpeed} = data.current; 
+    let {humidity, pressure, sunrise, sunset, windSpeed} = data.current;
+
+    timezone.innerHTML = data.timezone;
+    country.innerHTML = data.lat +'N ' + data.lon + 'E '
 
     currentWeatherItems.innerHTML = 
     ` <div class="weather-item">
