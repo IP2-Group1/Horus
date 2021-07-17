@@ -25,3 +25,49 @@ setInterval(() => {
 
     date.innerHTML = days[day] + ', ' + date1+ ' ' + months[month]
 },1000)
+
+var apiCall = '';
+var apiKey = '814caebffc6d3c6785e7b749a2cfd919';
+
+getWeatherData();
+function getWeatherData() {
+    navigator.geolocation.getCurrentPosition((success) => {
+
+        let {latitude, longitude} = success.coords;
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&unites=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
+            console.log(data);
+
+            displayWeatherData(data);
+        })
+    }) 
+}
+
+function displayWeatherData (data) {
+    let {humidity, pressure, sunrise, sunset, windSpeed} = data.current; 
+
+    currentWeatherItems.innerHTML = 
+    ` <div class="weather-item">
+    <div>Humidity</div>
+    <div>${humidity}</div>
+   </div>
+   <div class="weather-item">
+    <div>Pressure</div>
+    <div>${pressure}</div>
+   </div>
+   <div class="weather-item">
+    <div> Wind Speed</div>
+    <div>${windSpeed}</div>
+   </div>
+   <div class="weather-item">
+    <div> Sunrise</div>
+    <div>${window.moment(sunrise*1000).format('HH:mm a')}</div>
+   </div>
+   <div class="weather-item">
+    <div> Sunset</div>
+    <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
+   </div>
+   `;
+}
+
+
