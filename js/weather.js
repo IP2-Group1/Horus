@@ -35,7 +35,7 @@ function getWeatherData() {
 
         let {latitude, longitude} = success.coords;
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&unites=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
             console.log(data);
 
             displayWeatherData(data);
@@ -62,12 +62,26 @@ function displayWeatherData (data) {
    <div class="weather-item">
     <div> Sunrise</div>
     <div>${window.moment(sunrise*1000).format('HH:mm a')}</div>
-   </div>
-   <div class="weather-item">
-    <div> Sunset</div>
-    <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
-   </div>
+   
    `;
+    let weeklyForecast = ''
+   data.daily.forEach((day, index) => {
+       if(index == 0) {
+
+       } else {
+        weeklyForecast += 
+        `
+        <div class="weather-forecast-item">
+        <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
+        <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+        <div class="temp">Night - ${day.temp.night}&#176; C</div>
+        <div class="temp">Day - ${day.temp.day}&#176; C</div>
+        </div>
+        `
+       }
+   })
+
+   weatherForecast.innerHTML= weeklyForecast;
 }
 
 
