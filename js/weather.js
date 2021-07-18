@@ -21,7 +21,77 @@ setInterval(() => {
     const minutes = timeObject.getMinutes();
     const ampm = hour >=12 ? 'PM' : 'AM'
 
-    time.innerHTML = hoursIn12HrFormat + ':'+ minutes+ ' ' + `<span id="am-pm">${ampm}</span>`
+    time.innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':'+ (minutes < 10 ? '0'+minutes : minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
 
     date.innerHTML = days[day] + ', ' + date1+ ' ' + months[month]
 },1000)
+
+var apiCall = '';
+var apiKey = '814caebffc6d3c6785e7b749a2cfd919';
+
+getWeatherData();
+function getWeatherData() {
+    navigator.geolocation.getCurrentPosition((success) => {
+
+        let {latitude, longitude} = success.coords;
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
+            console.log(data);
+
+            displayWeatherData(data);
+        })
+    }) 
+}
+
+function displayWeatherData (data) {
+    let {humidity, pressure, sunrise, sunset, windSpeed} = data.current;
+
+    timezone.innerHTML = data.timezone;
+    country.innerHTML = data.lat +'N ' + data.lon + 'E '
+
+    currentWeatherItems.innerHTML = 
+    ` <div class="weather-item">
+    <div>Humidity</div>
+    <div>${humidity}</div>
+   </div>
+   <div class="weather-item">
+    <div>Pressure</div>
+    <div>${pressure}</div>
+   </div>
+   <div class="weather-item">
+    <div> Wind Speed</div>
+    <div>${windSpeed}</div>
+   </div>
+   <div class="weather-item">
+    <div> Sunrise</div>
+    <div>${window.moment(sunrise*1000).format('HH:mm a')}</div>
+   
+   `;
+    let weeklyForecast = ''
+   data.daily.forEach((day, index) => {
+       if(index == 0) {
+             currentTemp.innerHTML = `
+            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png" alt="weather icon" class="w-icon">
+            <div class="other">
+            <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
+            <div class="temp">Night - ${day.temp.night}&#176; C</div>
+            <div class="temp">Day - ${day.temp.day}&#176; C</div>
+            </div>
+             `
+       } else {
+        weeklyForecast += 
+        `
+        <div class="weather-forecast-item">
+        <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
+        <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+        <div class="temp">Night - ${day.temp.night}&#176; C</div>
+        <div class="temp">Day - ${day.temp.day}&#176; C</div>
+        </div>
+        `
+       }
+   })
+
+   weatherForecast.innerHTML= weeklyForecast;
+}
+
+
