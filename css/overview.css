@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap');
+
+body { font-family:  'Poppins', sans-serif; font-size: 16px; color: #555; margin:0; padding:0px }
+#page{max-width: 1200px; margin: 0 auto; position: relative;}
+
+
+
+section.main2{background-color:white; padding-top: 150px; padding-left:60px;; padding-bottom: 30px;color:#908F94;}
+    section.main2 article { padding: 0 20px 0 515px; background: url(../Images/alu.jpeg) no-repeat 0 5px;  min-height: 280px;}
+    section.main2 article h2{color: #E8516B;}
+ section.main2 article a.btn{color: grey;  border:1px solid grey;} 
+ 
+  section.main2 article .btn:hover{background-color:#51E8CF;
+ }
+
+
+ @media screen and (max-width:625px){
+ section.main2 article{
+    padding:310px 20px 0px 0px;
+    background-size: 300px auto;
+    min-height: initial;
+}}
+
+/* TECHNOLOGIES*/
+.testimonials{ margin:50px auto;}
+ .testimonials h1{text-align: center; font-weight: bold; color:#E8516B; padding-bottom: 10px; text-transform: uppercase;}
+ .testimonials h1::after{content: ''; background: #E8516B; display: block; height: 3px ; width: 170px; margin: 20px auto 5px;}
+.testimonials .row{margin-top: 30px;}
+.col-md-3{margin: 40px auto;}
+.profile{padding: 70px 10px 10px; background-color:#E9EDEE;}
+.profile img {top: -80px; position: absolute; left:calc(50% - 70px); border: 5px solid white;}
+.user{width: 142px; height: 147px; border-radius: 50%;}
+.profile h3{font-size: 1.2em; margin-top: 15px; color: gray;}
+span{font-size: 12px; color: gray;}
+blockquote{font-size: 1em; line-height: 25px;}
+blockquote::before{content:'\201c'; font-size: 40px; position: relative; color: #E8516B; line-height: 20px; bottom: -15px; right:5px}
+blockquote::after{content:'\201d'; font-size: 40px; position: relative; color: #E8516B; line-height: 20px; bottom: -15px; right:5px}
+.profile:hover{box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4); cursor: pointer; transition: 0.4s;}
+
+
+.container h1:after{content: ''; background:#E8516B; display: block; height: 1px ; width: 170px; margin: 20px auto 5px;}
+.container h1{text-align: center; font-weight: bold; color:#E8516B; padding-bottom: 10px; text-transform: uppercase;}
