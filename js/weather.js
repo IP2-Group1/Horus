@@ -93,16 +93,6 @@ function displayCurrentWeather (data) {
    weatherForecast.innerHTML= weeklyForecast;
 }
 
-getCityWeather();
-function getCityWeather() {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=paris&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
-        console.log(data);
-
-        displayCityWeather(data);
-    })
-    
-}
-
 
 
 
