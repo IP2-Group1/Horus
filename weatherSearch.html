@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="title" content="Horus">
+    <meta name="description" content="Get all the important Weather and Earthquake updates">
+    <meta name="author" content="Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a class="log" href="index.html">
+            <img class="logo" src="images/HORUS.png" alt="logo">
+        </a>
+
+        <ul class="navtext">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="earthquake.html">Earthquake</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="page1.html">Page1</a></li>
+            <li><a href="page2.html">Page2</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+    </nav>
+
+    <div id="ci"><input type="text" id="city" name="city" placeholder="Enter city name"></div>
+        <br>
+        <div id="sub"><input type="submit" value="Submit" id="submit"></div>
+
+
+
+<div class="container">
+    <div class="current-info">
+        <div class="date-container">
+            <div class="time" id="time">
+                 <span id="am-pm"></span>
+            </div>
+            <div class="date" id="date">
+                
+            </div>
+            <div class="others" id="current-weather-items">  
+            </div>
+        </div>
+        <div class="place-container">
+            <div class="time-zone" id="time-zone"></div>
+            <div class="country" id="country"></div>
+        </div>
+    </div>
+</div>
+<div class="future-forecast">
+    <div class="weather-forecast" id="weather-forecast">
+        <div class="weather-forecast-item">
+        <div class="day"></div>
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+        <div class="temp"></div>
+        <div class="temp"></div>
+        </div>
+        <div class="weather-forecast-item">
+            <div class="day"></div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="temp"></div>
+            <div class="temp"></div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day"></div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp"></div>
+                <div class="temp"></div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day"></div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                    <div class="temp"></div>
+                    <div class="temp"></div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day"></div>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+                        <div class="temp"></div>
+                        <div class="temp"></div>
+                        </div>
+                    
+                        
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/searchWeather.js"></script>
+<script>
+    document.getElementById("submit").addEventListener("click", getCityWeather);
+    var input = document.getElementById("city");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("submit").click();
+        }
+    });
+</script>
+
+
+</body>
+
+
+
+
+</html>
