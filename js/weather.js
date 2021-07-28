@@ -29,22 +29,23 @@ setInterval(() => {
 var apiCall = '';
 var apiKey = '814caebffc6d3c6785e7b749a2cfd919';
 
-getWeatherData();
-function getWeatherData() {
+getCurrentLocationWeather();
+function getCurrentLocationWeather() {
     navigator.geolocation.getCurrentPosition((success) => {
 
         let { latitude, longitude } = success.coords;
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
-            console.log(data);
 
-            displayWeatherData(data);
+            displayCurrentWeather(data);
         })
     })
 }
 
-function displayWeatherData(data) {
-    let { humidity, pressure, sunrise, sunset, windSpeed } = data.current;
+
+function displayCurrentWeather (data) {
+    let {humidity, pressure, sunrise, sunset, windSpeed} = data.current;
+
 
     timezone.innerHTML = data.timezone;
     country.innerHTML = data.lat + 'N ' + data.lon + 'E '
@@ -93,5 +94,9 @@ function displayWeatherData(data) {
 
     weatherForecast.innerHTML = weeklyForecast;
 }
+
+
+
+
 
 
