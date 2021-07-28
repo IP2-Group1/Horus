@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="title" content="Horus">
+    <meta name="description" content="Get all the important Weather and Earthquake updates">
+    <meta name="author" content="Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/covid.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a class="log" href="index.html">
+            <img class="logo" src="images/L.gif" alt="logo">
+        </a>
+
+        <ul class="navtext">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="earthquake.html">Earthquake</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="covid.html">Covid-19</a></li>
+            <li><a href="page2.html">Page2</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="body-container" data-iso3="KEN">
+        <h1 class="covid_title">COVID-19 STATISTICS</h1>
+        <div class="filters">
+            <label for="country_select">Countries</label>
+            <select id="country_select">
+                <option value="KEN">Kenya</option>
+                <option value="MUS">Mauritius</option>
+                <option value="GBR">United Kingdom</option>
+            </select>
+        </div>
+        <div class="chart">
+            <canvas id="covid_canvas"></canvas>
+        </div>
+        <div class="filters">
+            <label for="covid_select">Filters:</label>
+            <select id="covid_select">
+                <option value="new_cases" data-color=#E8516B>New Cases</option>
+                <option value="total_cases" data-color=#E8516B>Total Cases</option>
+                <option value="new_deaths" data-color=#51E8CF>New Deaths</option>
+                <option value="total_deaths" data-color=#E8516B>Total Deaths</option>
+                <option value="positive_rate" data-color=#51E8CF>Positive Rate</option>
+
+            </select>
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="js/chart.min.js"></script>
+    <script type="text/javascript" src="js/covid.js"></script>
+
+
+
+
+
+</body>
+
+
+
+
+</html>
