@@ -70,14 +70,7 @@ function displayWeatherData(data) {
    
    `;
 
-//    currentTemp.innerHTML = `
-//             <img src="http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
-//             <div class="other">
-//             <div class="day">${window.moment(data.list[0].dt * 1000).format('ddd')}</div>
-//             <div class="temp">Night - ${data.list[0].main.temp_min}&#176; C</div>
-//             <div class="temp">Day - ${data.list[0].main.temp_max}&#176; C</div>
-//             </div>
-//    `
+ 
 
    let fiveDayForecast = '';
 
