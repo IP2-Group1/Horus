@@ -8,7 +8,7 @@ body { font-family:  'Poppins', sans-serif; font-size: 16px; color: #555; margin
 
 section.main2{background-color:white; padding-top: 150px; padding-left:60px;; padding-bottom: 30px;color:#908F94;}
     section.main2 article { padding: 0 20px 0 515px; background: url(../Images/alu.jpeg) no-repeat 0 5px;  min-height: 280px;}
-    section.main2 article h2{color: #E8516B;}
+    section.main2 article h2{color: #E8516B; font-weight: bold; font-size: 30px;} 
  section.main2 article a.btn{color: grey;  border:1px solid grey;} 
  
   section.main2 article .btn:hover{background-color:#51E8CF;
@@ -24,7 +24,7 @@ section.main2{background-color:white; padding-top: 150px; padding-left:60px;; pa
 
 /* TECHNOLOGIES*/
 .testimonials{ margin:50px auto;}
- .testimonials h1{text-align: center; font-weight: bold; color:#E8516B; padding-bottom: 10px; text-transform: uppercase;}
+ .testimonials h1{text-align: center; font-weight: bold;font-size: 30px; color:#E8516B; padding-bottom: 10px; text-transform: uppercase;}
  .testimonials h1::after{content: ''; background: #E8516B; display: block; height: 3px ; width: 170px; margin: 20px auto 5px;}
 .testimonials .row{margin-top: 30px;}
 .col-md-3{margin: 40px auto;}
