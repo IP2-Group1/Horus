@@ -1,6 +1,98 @@
 /*add code here*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap");
 
-body{
-    font-family: "Poppins", sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;500;700&display=swap');
+
+/* for body element*/
+body { font-family: 'Poppins',sans-serif; font-size: 16px; color: #555; margin:0; padding:0 }
+#page{max-width: 1200px; margin: 0 auto; position: relative;}
+/* for the h1 elements*/
+
+h2{margin: 0 0 .5em 0;font-size: 1.5em;font-weight: 700; line-height: 1.1em;}
+
+p{margin: 0 0 1em 0;}
+a{color: #007eff;}
+a:visited {color:rgba(0,0,0,0.3);}
+a.btn{ font-size: 1.2em; text-decoration: none; color:#fff; border:1px solid #fff ;padding: 4px 15px; transition:background-color .5s; }
+    a.btn:hover{background-color: rgba(0,0,0,0.3);
+    }
+    
+
+ /* sections*/
+ 
+
+
+ 
+/* Section - Main 2*/
+section.main2{background-color:#E9EDEE; padding-top: 30px ; padding-bottom: 30px;color:grey;}
+    section.main2 article { padding: 0 20px 0 515px; background: url(../images/horus1.jpg) no-repeat 0 5px;  min-height: 220px; margin-left: 15px;}
+ section.main2 article a.btn{color: grey;  border:1px solid grey;} 
+ section.main2 article h2{color: #E8516B;}
+
+
+
+ /*testimonial*/
+ 
+ .testimonials{ margin:50px auto;}
+ .testimonials h1{text-align: center; font-weight: bold; color:#E8516B; padding-bottom: 10px; text-transform: uppercase;}
+ .testimonials h1::after{content: ''; background: #E8516B; display: block; height: 3px ; width: 170px; margin: 20px auto 5px;}
+.testimonials .row{margin-top: 30px;}
+.col-md-4{margin: 40px auto;}
+.profile{padding: 70px 10px 10px; background-color:#E9EDEE;}
+.profile img {top: -80px; position: absolute; left:calc(50% - 70px); border: 5px solid white;}
+.user{width: 142px; height: 147px; border-radius: 50%;}
+.profile h3{font-size: 1.2em; margin-top: 15px; color: gray;}
+span{font-size: 12px; color: gray;}
+blockquote{font-size: 1em; line-height: 25px;}
+blockquote::before{content:'\201c'; font-size: 40px; position: relative; color: #E8516B; line-height: 20px; bottom: -15px; right:5px}
+blockquote::after{content:'\201d'; font-size: 40px; position: relative; color: #E8516B; line-height: 20px; bottom: -15px; right:5px}
+.profile:hover{box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4); cursor: pointer; transition: 0.4s;}
+
+
+  
+
+
+
+
+@media screen and (max-width:625px){
+/*main*/
+section .main{top: -500px;}
+section.main aside{width:100%; float: none ; text-align: left; top: -300px;}
+section.main aside div.content{ margin: 8px 20px 8px 0; padding: 5px 0px 10px 85px; background-size: 45px 45px; background-position: 20px 5px ;}
+/*main2*/
+section.main2 article{
+    padding:205px 20px 0px 0px;
+    background-size: 300px auto;
+    min-height: initial;
 }
+
+
+}
+/*for slideshow*/
+.carousel-item {
+	height: 100vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.carousel-item :active{height: 100vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;}
+.carousel-caption {
+	bottom: 270px;
+}
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+}
+
