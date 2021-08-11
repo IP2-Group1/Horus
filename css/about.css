@@ -128,6 +128,14 @@ textarea:focus{
 ::placeholder{
     font-family:  'Poppins', sans-serif; font-size: 16px;
 }
+.img{
+    transition-duration: 1s;
+}
+.img:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: rgb(144, 143, 148);
+
+}
 input:required{
     background-image: url(../Images/req.jpg);
     background-size: 30%;
