@@ -9,9 +9,20 @@ body { font-family:  'Poppins', sans-serif; font-size: 16px; color: #555; margin
 section.main2{background-color:white; padding-top: 150px; padding-left:60px;; padding-bottom: 30px;color:#908F94;}
     section.main2 article { padding: 0 20px 0 515px; background: url(../Images/alu.jpeg) no-repeat 0 5px;  min-height: 280px;}
     section.main2 article h2{color: #E8516B; font-weight: bold; font-size: 30px;} 
- section.main2 article a.btn{color: grey;  border:1px solid grey;} 
+ section.main2 article a.btn{background-color:rgb(232, 81, 107);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: inherit;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 1s} 
  
-  section.main2 article .btn:hover{background-color:#51E8CF;
+  section.main2 article .btn:hover{background-color: rgb(81, 232, 207);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: rgb(144, 143, 148);
  }
 
 
