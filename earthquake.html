@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earthquake </title>
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/earthquake.css">
+    <link rel="stylesheet" href="css/earhquake.css">
 
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
 
     <nav class="navbar">
@@ -35,11 +35,28 @@
     </nav>
 
 
+    <div id='container'>
+        <!-- On our web page, show a link to the earthquake data. This is just for learning purposes. -->
+        <h3 class="feed-heading">USGS Earthquakes</h3>
+        <div id="feedColumn">
+            <p>Explore the
+                <a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS earthquake feed</a> using a
+                set of buttons created at run-time.
+            </p>
+            <div id="feedSelector"></div>
+        </div>
+        <div id="map"></div>
+    </div>
 
 
 
+    <script type="text/javascript" src="js/eathquake.js"></script>
+    <script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmdtQUN2lBJFgaMCZ2ok7nUoMtfJkUBbA">
+    </script>
     
-
 
 </body>
 
