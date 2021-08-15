@@ -20,13 +20,7 @@ function getTime(data) {
     const month = cityDate.getMonth();
     const date1 = cityDate.getDate();
     const day = cityDate.getDay();
-    const hour = cityDate.getHours();
-    const hoursIn12HrFormat = hour >=13 ? hour % 12 : hour
-    const minutes = cityDate.getMinutes();
-    const ampm = hour >=12 ? 'PM' : 'AM'
-
-    time.innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':'+ (minutes < 10 ? '0'+minutes : minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
-
+    
     date.innerHTML = days[day] + ', ' + date1+ ' ' + months[month]
 },1000)
 }
@@ -39,9 +33,19 @@ function getCityWeather() {
     var city = document.getElementById('city').value;
     var apiKey = '814caebffc6d3c6785e7b749a2cfd919';
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
-        console.log(data);
         displayWeatherData(data);
         getTime(data);
+        getCurrentTime();
+    })
+
+    
+}
+
+function getCurrentTime() {
+    var city = document.getElementById('city').value;
+    fetch(`http://api.weatherstack.com/current?access_key=82c588ae6b65e1144f03c3edcc1be034&query=${city}`).then(res => res.json()).then(data => {
+        console.log(data);
+        time.innerHTML = data.current.observation_time
     })
 
     
