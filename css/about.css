@@ -20,6 +20,7 @@ img{
 }
 .horus{
     color: rgb(81, 232, 207);
+    font-size: 30pt;
 }
 .container1{
     position: relative;
@@ -169,7 +170,7 @@ iframe:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     color: rgb(144, 143, 148);   
   }
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: auto) {
     .col-25, .col-75, input[type=submit] {
       width: 100%;
       margin-top: 0;
