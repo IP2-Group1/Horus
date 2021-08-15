@@ -40,6 +40,8 @@ body {
 }
 
 .date-container .time {
+  position: relative;
+  top: -30px;
   font-size: 70px;
   color: #3c3c44;
 }
@@ -51,6 +53,8 @@ body {
 }
 
 .date-container .date {
+  position: relative;
+  top: -30px;
   font-size: 30px;
   color: #3c3c44;
 }
@@ -72,6 +76,8 @@ body {
 }
 
 .current-info .others {
+  position: relative;
+  top: -40px;
   display: flex;
   flex-direction: column;
   background: rgba(24, 24, 27, 0.6);
