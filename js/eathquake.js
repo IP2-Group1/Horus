@@ -3,18 +3,37 @@
         //The following data is used when constructing buttons. You will have to extend this, based upon the feeds at: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
         var quakeFeeds = {
             "past hour": {
-                "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
-                "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson"
-                // Add more...
+                "all earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+                "all M1.0+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson",
+                "all M2.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.geojson",
+                "all M4.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_hour.geojson",
+                "Significant Eathquakes":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson"
+                
             },
             "past day": {
-                "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
-                // Add more...
+                "all earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+                "all M1.0+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojson",
+                "all M2.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
+                "all M4.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+                "Significant Eathquakes":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson"
+                
             },
             "past week": {
-                // Add more...
+                "all earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+                "all M1.0+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson",
+                "all M2.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson",
+                "all M4.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+                "Significant Eathquakes":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson"
+                
+            },
+            "past month":{
+                "all earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
+                "all M1.0+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojson",
+                "all M2.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson",
+                "all M4.5+":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
+                "Significant Eathquakes":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
             }
-            // Add more...
+            
         };
 
         /* Function to construct a set of web page buttons of class: 'feed-name' where each button has a stored URL property */
