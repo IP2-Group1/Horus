@@ -4,3 +4,13 @@
 body{
     font-family: "Poppins", sans-serif;
 }
+.heading{
+    top: 50px;
+    position: fixed;
+}
+
+.chart{
+    top: 100px;
+    position: fixed;
+    width: 80%;
+}
